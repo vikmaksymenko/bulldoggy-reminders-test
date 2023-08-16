@@ -1,11 +1,19 @@
 {
-    "compilerOptions": {
-      "target": "es5",
-      "lib": ["es5", "dom"],
-      "types": ["cypress", "node"],
-      "esModuleInterop": true,
-      "moduleResolution": "node16",
-      "baseUrl": "."
-    },
-    "include": ["**/*.ts"]
-  }
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "es5",
+      "dom"
+    ],
+    "types": [
+      "cypress",
+      "node"
+    ],
+    "esModuleInterop": true,
+    "module": "node16",
+    "baseUrl": "."
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}
