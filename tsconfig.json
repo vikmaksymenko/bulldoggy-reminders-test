@@ -6,6 +6,7 @@
       "dom"
     ],
     "types": [
+      "@shelex/cypress-allure-plugin",
       "cypress",
       "node"
     ],

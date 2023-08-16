@@ -30,3 +30,7 @@ node_modules/
 # Cypress specific
 cypress/videos
 cypress/screenshots
+
+# Allure reports
+allure-results
+allure-report

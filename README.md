@@ -9,6 +9,7 @@ Prerequisites
 * Node 16.x of higher
 * npm 7.x or higher
 * Docker 20.x or higher
+* Java 8 or higher (for Allure)
 
 Run Buldooggy Reminders app
 ---------------------------
@@ -31,5 +32,12 @@ Run Tests
 
 ```shell    
 npm test
+```
+
+Generate Allure Report
+----------------------
+
+```shell    
+npm run report:generate 
 ```
 
