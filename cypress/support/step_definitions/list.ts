@@ -46,3 +46,12 @@ Then('I rename the list to {string}', function (newName: string) {
     this.oldListName = this.listName;
     this.listName = this.newListName;
 });
+
+
+Then('I delete the list {string}', function (name: string) {
+    expect(this.listName).to.not.be.undefined;
+    expect(this.listName).to.contain(name);
+
+    // Click Delete button
+    cy.get(reminderRow).contains(this.listName).parent().find(reminderButton).last().click();
+});

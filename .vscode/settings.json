@@ -9,7 +9,7 @@
     "cucumberautocomplete.strictGherkinCompletion": false,
     "cucumberautocomplete.onTypeFormat": true,
     "eslint.lintTask.enable": true,
-    "cypressHelper.commandForOpen": "npm run cy:cucumber:open",
+    "cypressHelper.commandForOpen": "npx cypress open",
     "cypressHelper.customCommandsFolder": "cypress/support",
     "cypressHelper.cucumberTagsAutocomplete": {
         "enable": true,

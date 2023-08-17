@@ -12,3 +12,8 @@ Feature: List management
         And I should see reminders for 'test list with new name'
         And I should not see list 'test list'
 
+    Scenario: I can delete a list
+        Given I have a list called 'test list'
+        When I delete the list 'test list'
+        Then I should not see list 'test list'
+        And I should not see reminders for 'test list'

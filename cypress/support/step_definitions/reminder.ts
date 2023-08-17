@@ -11,3 +11,9 @@ Then('I should see reminders for {string}', function (listName: string) {
     cy.get('@reminders').should('be.visible');
     cy.get('@reminders').find(newReminderItemRow).should('be.visible');
 });
+
+Then('I should not see reminders for {string}', function (listName: string) {
+    expect(this.listName).to.not.be.undefined;
+    expect(this.listName).to.contain(listName);
+    cy.get(remindersCardTitle).contains(this.listName).should('not.exist');
+});
