@@ -1,0 +1,19 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.formatOnSave": true,
+    "cucumberautocomplete.steps": ["cypress/support/step_definitions/**/*.ts"],
+    "cucumberautocomplete.syncfeatures": true,
+    "cucumberautocomplete.strictGherkinCompletion": false,
+    "cucumberautocomplete.onTypeFormat": true,
+    "eslint.lintTask.enable": true,
+    "cypressHelper.commandForOpen": "npm run cy:cucumber:open",
+    "cypressHelper.customCommandsFolder": "cypress/support",
+    "cypressHelper.cucumberTagsAutocomplete": {
+        "enable": true,
+        "allurePlugin": true,
+        "tags": ["logged_in"]
+    }
+}

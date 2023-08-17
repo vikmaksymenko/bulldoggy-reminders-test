@@ -8,7 +8,7 @@ Given('I should be logged in as {string}', (name: string) => {
             url: '/login',
             form: true,
             body: {
-                username: user.username,   
+                username: user.username,
                 password: user.password
             }
         }).then((response) => {

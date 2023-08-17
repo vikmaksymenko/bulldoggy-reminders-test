@@ -41,3 +41,9 @@ Generate Allure Report
 npm run report:generate 
 ```
 
+Lint code
+---------
+
+```shell
+npm run lint
+```

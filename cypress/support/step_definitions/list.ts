@@ -10,6 +10,6 @@ When('I create a list called {string}', function(name: string) {
     cy.then(() => { this.listName = name; });
 });
 
-Then('I should see new list', function (name: string) {
+Then('I should see new list', function () {
     cy.get('div.reminder-row p').contains(this.listName).should('exist').and('be.visible');
 });
