@@ -1,6 +1,6 @@
 @logged_in
-Feature: List management
-    Scenario: I can create a list
+Feature: Reminders management
+    Scenario: I can check reminder
         When I create a list called 'test list'
         Then I should see list 'test list'
         And I should see reminders for 'test list'
@@ -17,11 +17,3 @@ Feature: List management
         When I delete the list 'test list'
         Then I should not see list 'test list'
         And I should not see reminders for 'test list'
-
-    Scenario: I can select list
-        Given I have 3 lists with 2 reminders
-        When I select the list number 2
-        Then I should see reminders for the list number 2
-
-        When I select the list number 3
-        Then I should see reminders for the list number 3

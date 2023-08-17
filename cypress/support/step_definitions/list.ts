@@ -55,3 +55,10 @@ Then('I delete the list {string}', function (name: string) {
     // Click Delete button
     cy.get(reminderRow).contains(this.listName).parent().find(reminderButton).last().click();
 });
+
+Then('I select the list number {int}', function (index: number) {
+    expect(this.lists).to.be.ok.and.to.have.length.of.at.least(index - 1);
+    cy.get(reminderRow).contains(this.lists[index -1].name).parent().as('list');
+    cy.get('@list').click();
+    cy.get('@list').should('have.class', 'selected-list');
+});

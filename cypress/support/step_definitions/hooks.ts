@@ -4,6 +4,8 @@ Before({ tags: "@logged_in" }, function() {
     Step(this, "I should be logged in as 'pythonista'");
 });
 
+// Note: this is not working after failed scenarios
+// https://github.com/badeball/cypress-cucumber-preprocessor/issues/824#issuecomment-1561492281
 After({ tags: "@logged_in" }, function() {
     const lists = [];
 
@@ -17,6 +19,10 @@ After({ tags: "@logged_in" }, function() {
 
     if(this.oldListName) {
         lists.push(this.oldListName);
+    }
+
+    if(this.lists) {
+        lists.push(...this.lists.map(list => list.name));
     }
 
     cy.request('/api/reminders').then((response) => {
