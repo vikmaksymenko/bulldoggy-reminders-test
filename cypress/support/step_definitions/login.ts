@@ -4,9 +4,12 @@ Given("I am on the login page", () => {
     cy.visit("/login");
 });
 
-When("I enter valid credentials", () => {
-    cy.get("input[name='username']").type("pythonista");
-    cy.get("input[name='password']").type("I<3testing");
+When("I enter credentials for user {string}", (name: string) => {
+    cy.fixture("users").then((users) => {
+        const user = users[name];
+        cy.get("input[name='username']").type(user.username);
+        cy.get("input[name='password']").type(user.password);
+    });
     cy.get("[data-testid='login-button']").click();
 });
 
