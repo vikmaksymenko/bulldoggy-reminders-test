@@ -1,19 +1,25 @@
-@logged_in
+@logged_in @has_list_with_reminders
 Feature: Reminders management
-    Scenario: I can check reminder
-        When I create a list called 'test list'
-        Then I should see list 'test list'
-        And I should see reminders for 'test list'
+    Scenario: I can check a reminder
+        Given I select the list with reminders
+        When I check the reminder number 2
+        Then I should see the reminder number 2 checked  
 
-    Scenario: I can rename a list
-        Given I have a list called 'test list'
-        When I rename the list to 'test list with new name'
-        Then I should see list 'test list with new name'
-        And I should see reminders for 'test list with new name'
-        And I should not see list 'test list'
+        When I check the reminder number 3
+        Then I should see the reminder number 3 checked  
 
-    Scenario: I can delete a list
-        Given I have a list called 'test list'
-        When I delete the list 'test list'
-        Then I should not see list 'test list'
-        And I should not see reminders for 'test list'
+        When I check the reminder number 2
+        Then I should see the reminder number 2 unchecked  
+
+    Scenario: I can create a reminder
+        When I create a reminder called 'test list'
+        Then I should see the reminder 'test list'
+
+    Scenario: I can rename a reminder
+        When I rename the reminder number 1 to 'test reminder with new name'
+        Then I should see the reminder 'test reminder with new name'
+        And I should not see reminder with old name
+
+    Scenario: I can delete a reminder
+        When I delete the reminder number 1
+        Then I should not see reminder number 1
