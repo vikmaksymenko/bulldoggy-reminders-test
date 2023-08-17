@@ -1,7 +1,5 @@
+@logged_in
 Feature: Login to app
-
-    Background: I should be logged in
-        Given I should be logged in as 'pythonista'
 
     Scenario: Logout from app
         When I click on logout button
