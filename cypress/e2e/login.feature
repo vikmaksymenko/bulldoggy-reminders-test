@@ -2,13 +2,13 @@ Feature: Login to app
 
     Scenario: Successul login with valid credentials
         Given I am on the login page
-        When I enter credentials for user "pythonista"
-        Then I should be logged in as "pythonista"
+        When I enter credentials for user 'pythonista'
+        Then I should be in app as 'pythonista'
 
     Scenario Outline: Login with wrong password or not registered user
         Given I am on the login page
-        When I enter username "<username>" and password "<password>"
-        Then I should see the error message "Invalid login! Please retry."
+        When I enter username '<username>' and password '<password>'
+        Then I should see the error message 'Invalid login! Please retry.'
         And I should not be logged in
 
         Examples:
@@ -19,7 +19,7 @@ Feature: Login to app
     # The sistem don't have specific error messages for empty email or password, so we have to setup separate scenario
     Scenario Outline: Login with empty email or password
         Given I am on the login page
-        When I enter username "<username>" and password "<password>"
+        When I enter username '<username>' and password '<password>'
         And I should not be logged in
 
         Examples:
